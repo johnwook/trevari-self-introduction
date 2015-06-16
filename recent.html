@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -40,107 +40,56 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>이름이 뭐예요?</h1>
-				</section>
-
-				<section>
-					<h1>무슨 일 하세요?</h1>
-				</section>
-
-				<section>
-					<h1>그 일, 계속 할 건가요?</h1>
-				</section>
-
 				<section data-state="randomQuestionStart">
-					<h1>랜덤 질문!</h1>
+					<h1>근황 토크!</h1>
 				</section>
 
 				<section>
 					<section>
-						<h2>가장 자신있는 신체 부위는 어디인가요?</h2>
+						<h2>요즘 덕질하는 것이 있다면?</h2>
 					</section>
 
 					<section>
-						<h2>가장 최근에 읽은 책이 뭔가요?</h2>
-						<h4>(트레바리 책 말고)</h4>
+						<h2>요즘 하고싶은데 못하고 있는 것이 있다면?</h2>
 					</section>
 
 					<section>
-						<h2>주로 어떤 책을 즐겨 읽나요?</h2>
+						<h2>요즘 제일 당신을 짜증나게 하는 것은?</h2>
 					</section>
 
 					<section>
-						<h2>술 vs 커피</h2>
+						<h2>요즘 꽂힌 노래가 있나요?</h2>
 					</section>
 
 					<section>
-						<h2>스트레스는 뭘로 푸나요?</h2>
+						<h2>최근에 재미있게 본 영화는?</h2>
 					</section>
 
 					<section>
-						<h2>이따금 글을 쓰나요?</h2>
+						<h2>지난 한 달, 나만의 핫플레이스는 어디??</h2>
 					</section>
 
 					<section>
-						<h2>나의 매력 포인트는?</h2>
+						<h2>가장 최근에 지른 물건은?</h2>
 					</section>
 
 					<section>
-						<h2>요새 가장 큰 고민이 뭐예요?ㅜㅜ</h2>
+						<h2>요즘 제일 자주 연락하는 사람은?</h2>
 					</section>
 
 					<section>
-						<h3>갑자기 천억이 생기면 어떤 삶을 살 건가요?</h3>
+						<h2>요즘 제일 자주 만나는 사람은?</h2>
 					</section>
 
 					<section>
-						<h2>2명이서 도란도란</h2>
-						<h2>vs</h2>
-						<h2>4명이서 오붓오붓</h2>
-						<h2>vs</h2>
-						<h2>8명이서 왁자지껄</h2>
+						<h2>요즘 제일 미운 사람이 있다면?</h2>
 					</section>
 
 					<section>
-						<h2>이성을 볼 때 뭘 제일 중요시하나요?</h2>
-					</section>
-
-					<section>
-						<h3>주량은 얼마인가요?</h3>
-					</section>
-
-					<section>
-						<h3>존경하는 사람이 있나요?</h3>
-					</section>
-
-					<section>
-						<h3>술버릇이 무엇인가요??</h3>
-					</section>
-
-					<section>
-						<h3>지금 제일 가지고 싶은 것은?</h3>
-					</section>
-
-					<section>
-						<h3>싫어하는 음식이 있나요?</h3>
-					</section>
-
-					<section>
-						<h3>좌우명이 있다면?</h3>
-					</section>
-
-					<section>
-						<h3>통일이 되어야 할까요?</h3>
+						<h2>최근 했던 가장 뿌듯한 일은?</h2>
 					</section>
 				</section>
-
-				<section>
-					<h1>질문 받습니다 (max 3)</h1>
-				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
@@ -164,11 +113,19 @@
 				]
 			});
 
-			Reveal.addEventListener('randomQuestionStart', function() {
-				var randomIndex = Math.floor(Math.random()*18);
+			function moveToRandomSlide(delay) {
+				var randomIndex = Math.floor(Math.random()*11);
 				setTimeout(function() {
-					Reveal.slide(4, randomIndex);
-				}, 1000);
+					Reveal.slide(1, randomIndex);
+				}, delay);
+			}
+
+			Reveal.addEventListener('randomQuestionStart', function() {
+				moveToRandomSlide(1000)
+			});
+
+			Reveal.addEventListener('ready', function() {
+				moveToRandomSlide(1500)
 			});
 		</script>
 
